@@ -1,4 +1,4 @@
-torch @ https://download.pytorch.org/whl/cu121_full/torch-2.4.1%2Bcu121-cp310-cp310-linux_x86_64.whl#sha256=f3ed9a2b7f8671b2b32a2f036d1b81055eb3ad9b18ba43b705aa34bae4289e1a
-torchvision @ https://download.pytorch.org/whl/cu121_full/torchvision-0.19.1%2Bcu121-cp310-cp310-linux_x86_64.whl#sha256=b8cc4bf381b75522995b601e07a1b433b5fd925dc3e34a7fa6cd22f449d65379
+torch==2.4.1
+torchvision==0.19.1
 shapely==2.0.6
 opencv-python==4.10.0.84
