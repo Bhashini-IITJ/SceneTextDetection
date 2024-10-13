@@ -4,6 +4,7 @@ from model import East
 import torch
 import utils
 import preprossing
+import argparse
 import cv2
 import numpy as np
 import time
@@ -97,3 +98,14 @@ def predict(image_path,device,model_checkpoint):
     print('EAST <==> TEST <==> Record and Save <==> Done')
 
     return bbox_result_dict
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Text detection using EAST model')
+    parser.add_argument('--image_path', type=str, required=True, help='Path to the input image')
+    parser.add_argument('--device', type=str, default='cpu', help='Device to run the model on, e.g., "cpu" or "cuda"')
+    parser.add_argument('--model_checkpoint', type=str, required=True, help='Path to the model checkpoint file')
+
+    args = parser.parse_args()
+
+    # Call the predict function with arguments
+    predict(args.image_path, args.device, args.model_checkpoint)
