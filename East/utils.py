@@ -184,7 +184,7 @@ def detect(score_map, geo_map, timer, score_map_thresh=0.8, box_thresh=0.1, nms_
     start = time.time()
     text_box_restored = preprossing.restore_rectangle(xy_text[:, ::-1] * 4,
                                                       geo_map[xy_text[:, 0], xy_text[:, 1], :])  # N*4*2
-    print('{} text boxes before nms'.format(text_box_restored.shape[0]))
+    # print('{} text boxes before nms'.format(text_box_restored.shape[0]))
     boxes = np.zeros((text_box_restored.shape[0], 9), dtype=np.float32)
     boxes[:, :8] = text_box_restored.reshape((-1, 8))
     boxes[:, 8] = score_map[xy_text[:, 0], xy_text[:, 1]]
@@ -193,7 +193,7 @@ def detect(score_map, geo_map, timer, score_map_thresh=0.8, box_thresh=0.1, nms_
     start = time.time()
     boxes = locality_aware_nms.nms_locality(boxes.astype(np.float64), nms_thres)
     timer['nms'] = time.time() - start
-    print(timer['nms'])
+    # print(timer['nms'])
     if boxes.shape[0] == 0:
         return None, timer
 
