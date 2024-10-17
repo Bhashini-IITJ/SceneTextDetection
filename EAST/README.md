@@ -17,7 +17,7 @@ The script ```infer.py``` shall be used for inference. Get more details about us
 
 Model checkpoints can also be accessed from github [assets](https://github.com/Bhashini-IITJ/SceneTextDetection/releases/tag/EAST).
 ```
-python infer.py --image_path ../demo_images/image_90.jpg --model_checkpoint tmp/epoch_990_checkpoint.pth.tar --device cuda:0
+python infer.py --image_path ../demo_images/image_90.jpg --model_checkpoint tmp/epoch_990_checkpoint.pth.tar
 ```
 
 ### Acknowledgement
