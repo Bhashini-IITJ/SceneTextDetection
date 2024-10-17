@@ -11,10 +11,12 @@ import utils
 # Suppress warnings
 warnings.filterwarnings("ignore")
 
-def predict(image_path, device, model_checkpoint):
+def predict(image_path, model_checkpoint):
     # Load image
-    im = cv2.imread(image_path)
-    # im = cv2.imread(image_path)[:, :, ::-1]
+    # im = cv2.imread(image_path)
+    im = cv2.imread(image_path)[:, :, ::-1]
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Initialize the EAST model and load checkpoint
     model = East(device)
@@ -67,10 +69,9 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description='Text detection using EAST model')
     parser.add_argument('--image_path', type=str, required=True, help='Path to the input image')
-    parser.add_argument('--device', type=str, default='cpu', help='Device to run the model on, e.g., "cpu" or "cuda"')
     parser.add_argument('--model_checkpoint', type=str, required=True, help='Path to the model checkpoint file')
     args = parser.parse_args()
 
     # Run prediction and get results as dictionary
-    detection_result = predict(args.image_path, args.device, args.model_checkpoint)
+    detection_result = predict(args.image_path, args.model_checkpoint)
     print(detection_result)
