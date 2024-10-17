@@ -2,12 +2,6 @@
 
 ## Scene Text Detection - East
 
-### Clone Repository 
-
-```
-git clone https://github.com/Bhashini-IITJ/SceneTextDetection.git   
-```
-
 ### Installation
 ```commandline
 conda create -n east_infer python=3.12
