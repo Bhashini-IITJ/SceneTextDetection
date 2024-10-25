@@ -114,7 +114,7 @@ class MobileNetV2(nn.Module):
                 m.bias.data.zero_()
 
 
-def mobilenet(pretrained=True, **kwargs):
+def mobilenet(device, pretrained=True, **kwargs):
     """
     Constructs a ResNet-50 model.
     Args:
@@ -123,7 +123,7 @@ def mobilenet(pretrained=True, **kwargs):
     model = MobileNetV2()
     if pretrained:
         model_dict = model.state_dict()
-        pretrained_dict = torch.load(cfg.pretrained_basemodel_path,map_location=torch.device('cpu'))
+        pretrained_dict = torch.load(cfg.pretrained_basemodel_path,map_location=torch.device(f'{device}'), weights_only=True)
         pretrained_dict = {k: v for k, v in pretrained_dict.items() if k in model_dict}
         model_dict.update(pretrained_dict)
         model.load_state_dict(model_dict)
@@ -134,9 +134,9 @@ def mobilenet(pretrained=True, **kwargs):
 
 
 class East(nn.Module):
-    def __init__(self):
+    def __init__(self, device):
         super(East, self).__init__()
-        self.mobilenet = mobilenet(True)
+        self.mobilenet = mobilenet(device, pretrained=True)
         # self.si for stage i
         self.s1 = nn.Sequential(*list(self.mobilenet.children())[0][0:4])
         self.s2 = nn.Sequential(*list(self.mobilenet.children())[0][4:7])
@@ -237,4 +237,4 @@ class East(nn.Module):
         return F_score, F_geometry
 
 
-model=East()
+# model=East(device)
