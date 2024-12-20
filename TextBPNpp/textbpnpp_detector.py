@@ -16,10 +16,6 @@ model_info = {
         "path": "models/TextBPN_resnet50_300.pth",
         "url" : "https://github.com/Bhashini-IITJ/SceneTextDetection/releases/download/TextBPN%2B%2B/TextBPN_resnet50_300.pth",
     },
-    "textbpnpp_deformable": {
-        "path":"models/TextBPN_deformable_resnet50_300.pth",
-        "url": "https://github.com/Bhashini-IITJ/SceneTextDetection/releases/download/TextBPN%2B%2B/TextBPN_deformable_resnet50_300.pth",
-    },
     "textbpn_resnet18" : {
         "path":"models/TextBPN_resnet18_300.pth",
         "url": "https://github.com/Bhashini-IITJ/SceneTextDetection/releases/download/TextBPN%2B%2B/TextBPN_resnet18_300.pth",
@@ -194,6 +190,6 @@ if __name__ == "__main__":
     print(result)
     # detector.visualize_detections(image_path, result)
 
-    # python -textbpnpp_detector.py \
+    # python textbpnpp_detector.py \
     # --image_path ../demo_images/image_90.jpg \
     # --model_name textbpnpp
