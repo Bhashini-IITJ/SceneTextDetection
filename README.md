@@ -1,4 +1,4 @@
-# SceneTextDetection
+# Indian Language Scene Text Detection
 This repository provides implementations of various scene text detection models, focusing on the detection of text in images.
 1. **EAST**: An Efficient and Accurate Scene Text Detector ([paper](https://arxiv.org/abs/1704.03155))
 1. **TextBPN++**: Robust text detection module ([paper](https://arxiv.org/pdf/2205.05320))
