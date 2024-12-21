@@ -1,0 +1,6 @@
+opencv-python==4.10.0.82
+numpy==1.26.0
+easydict==1.13
+matplotlib==3.9.4
+scipy==1.13.0
+tqdm==4.67.1
