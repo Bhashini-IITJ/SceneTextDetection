@@ -192,4 +192,4 @@ if __name__ == "__main__":
 
     # python textbpnpp_detector.py \
     # --image_path ../demo_images/image_90.jpg \
-    # --model_name textbpnpp
+    # --model_name textbpn_mlt
