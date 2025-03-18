@@ -16,7 +16,7 @@ The script ```textbpnpp_detector.py``` shall be used for inference. Get more det
 
 Model checkpoints can also be accessed from github [assets](https://github.com/Bhashini-IITJ/SceneTextDetection/releases/tag/TextBPN%2B%2B).
 ```
-python textbpnpp_detector.py --image_path ../demo_images/image_90.jpg  --model_name textbpn_mlt
+python textbpnpp_detector.py --image_path ../demo_images/image_90.jpg  --model_name textbpnpp
 ```
 
 ### Acknowledgement
