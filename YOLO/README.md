@@ -31,13 +31,6 @@ End-to-end on the BSTD test set (1,319 images), official IndicPhotoOCR metric (p
 | YOLO11n `yolo11n_bstd_mist_1920` | 52.8 | 58.4 | 53.9 | 39.9 | 56.2 |
 | TextBPN++ (IndicPhotoOCR default) | 49.2 | 47.8 | 47.3 | 37.9 | 56.7 |
 
-Detection only, `test.py` on 526 held-out BSTD train images (not used for training; IoU ≥ 0.5, pooled over words):
-
-| Detector | P | R | F1 |
-|---|---|---|---|
-| `yolo11n_bstd_1920` | 61.1 | 80.7 | 69.5 |
-| `yolo11n_bstd_mist_1920` | 62.2 | 80.8 | 70.3 |
-
 On the MIST test set the BSTD+MIST model reaches detection P/R/F1 0.82 / 0.67 / 0.74, against 0.63 / 0.39 / 0.48 for the BSTD-only model. Restricted to test clips that never occur in MIST training, recall/F1 is 0.64 / 0.72 against 0.37 / 0.46.
 
 ### Inference
